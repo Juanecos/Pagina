@@ -1,37 +1,35 @@
 {% extends 'base.html' %}
 
-{% block titulo%}  Inicio{% endblock %}
+{% block titulo%}  Visualizacion {% endblock %}
 
 {% block contenido %}
+
     <div class="container-max">
-        <div>
-            <div class="row-2">
-                <div class="col-2">
-                    <h2>Tiempo real</h2>
-                    <p>Consulta aqui los valores de temperatura en tiempo real para cada uno de tus dispositivos</p>
-                    <button>Ir a tiempo real</button>
-                </div>
-                <div class="col-2">
-                    <h2>Historial</h2>
-                    <p>Mira el historial completo de temperatura a lo largo del ultimo año</p>
-                    <button>Ir a historial</button> 
-                </div>
+        <div class="row-2">
+            <div class="col-2">
+                <h2>Tiempo real</h2>
+                <p>Consulta aqui los valores de temperatura en tiempo real para cada uno de tus dispositivos</p>
+                <button>Ir a tiempo real</button>
             </div>
-            <div  class="row-2">
-                <div class="col-2">
-                    <h2>Busqueda</h2>
-                    <p>Busqueda por año, mes y dia</p>
-                    <button>Ir a busquedas</button>
-                </div>
-                <div class="col-2">
-                    <h2>Alertas</h2>
-                    <p>Obten la informacion de las ultimas alertas</p>
-                    <button >Ir a alertas</button>
-                </div>
+            <div class="col-2">
+                <h2>Historial</h2>
+                <p>Mira el historial completo de temperatura a lo largo del ultimo año</p>
+                <button>Ir a historial</button> 
+            </div>
+        </div>
+        <div  class="row-2">
+            <div class="col-2">
+                <h2>Busqueda</h2>
+                <p>Busqueda por año, mes y dia</p>
+                <button>Ir a busquedas</button>
+            </div>
+            <div class="col-2">
+                <h2>Alertas</h2>
+                <p>Obten la informacion de las ultimas alertas</p>
+                <button >Ir a alertas</button>
             </div>
         </div>
     </div>
-
 
 {% endblock %}
 

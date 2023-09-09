@@ -2,7 +2,6 @@
 
 [data-theme="light"]{
 
-     
     --primary:#5ac2cf;
     --border: #5ac2cf;
     --borderstyle: ridge;
@@ -11,13 +10,10 @@
     --textinverted:#2e682e;
     --boundingbox: #99b3ee;
     --botimg:url('luna.png');
-    
 
-    
 }
 
 [data-theme="dark" ]{
-    
     
     --primary:#fc843e;
     --border:#ffd5bc;
@@ -27,24 +23,20 @@
     --textinverted:#3b07079d;
     --boundingbox: #161616;
     --botimg:url('sol.png');
-    
-    
+
 }
 
 body:not(.no-transition) {
     body:not(.no-transition) {
         transition: 0;
-      }
-  }
+    }
+}
 
 body{
     color: var(--text);
     background: var(--background);
     margin: 60px;
     transition: .5s ease all;
-    
-
-
 }
 
 main {
@@ -53,21 +45,19 @@ main {
     padding-inline: 100px; 
     padding-block-start: 40px;
 }
+
 header {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--primary);
     margin-inline: 50px;
     border-radius: 5px;
-    
     border-bottom-style:var(--borderstyle);
     border-color: var(--border);
     border-width: 2px;
-
     text-align: flex;
-
 }
-nav {
 
+nav {
     display: flex;
     justify-content: space-between;
 }
@@ -78,6 +68,7 @@ nav ul {
     width: 80%;
     display: flex;
 }
+
 nav u2 {
     list-style-type: none;
     float:right;
@@ -85,32 +76,26 @@ nav u2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
+
 nav li{ 
     margin-right: 20px;
     display: flex;
     justify-content: space-between;
-
 }
-
 
 nav a {
     color: var(--textinverted);
     text-decoration: none;
     text-align: center;
-    
     font-weight: bold;
     display: flex;
-
 }
-
 
 nav a:hover {
     text-decoration: line;
     color:var(--text)!important;
     cursor: pointer;
-    
 }
 
 button{
@@ -121,6 +106,7 @@ button{
     margin-top: 20px;
     border-radius: 5px;
 }
+
 button:hover{
     background-color: var(--primary);
     color: var(--text);
@@ -132,7 +118,6 @@ button:hover{
 }
 
 #slider{
-
     background: none; 
     border: none; 
     padding: 0; 
@@ -144,8 +129,8 @@ button:hover{
     width: 45px; /* Define el ancho del botón */
     height: 45px; 
     justify-content: space-between;
-
 }
+
 .switch{
     list-style-type: none;
     text-decoration: none;
@@ -155,9 +140,7 @@ button:hover{
     color:var(--textinverted);
 }
 
-
 .col-2{
-    
     width:50%;
     padding-block: 20px;
     padding: 40px;
@@ -165,13 +148,8 @@ button:hover{
     text-align: justify;
     background-color: var(--boundingbox);
     border-radius: 10px;
-
-
-
 }
+
 .row-2{
-
     display: flex;
-
-
 }
