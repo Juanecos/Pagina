@@ -6,6 +6,7 @@
     --text:#3a3135;
     --textinverted:#2e682e;
     --boundingbox: #aff1de;
+    --botimg:url('luna.png');
 }
 
 [data-theme="dark"]{
@@ -14,6 +15,7 @@
     --text:#e9dada;
     --textinverted:#3b07079d;
     --boundingbox: #b48166;
+    --botimg:url('sol.png');
 }
 
 
@@ -38,57 +40,71 @@ main {
 }
 header {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: flex;
+    
     border-radius: 5px;
     background-color: var(--primary);
     margin-inline: 50px;
-
+    text-align: flex;
+  
 
 
 }
 nav {
-    padding: 0;
-    display:flex;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style-type: none;
     float:left;
-    width: 70%;
+    width: 80%;
     display: flex;
+
     
     
     
 }
 nav u2 {
+    list-style-type: none;
     float:right;
-    width: 10%;
-    margin-top: 15px ;
+    width: 20%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     
 
 }
-nav li {
+nav li{
 
     
     margin-right: 20px;
     display: flex;
+    justify-content: space-between;
 
 
 }
+
 
 nav a {
     color: var(--textinverted);
     text-decoration: none;
+    text-align: center;
     
     font-weight: bold;
+    display: flex;
+
+    
 
 }
+
 
 nav a:hover {
     text-decoration: line;
     color:var(--text)!important;
     cursor: pointer;
+    
     
 }
 
@@ -98,5 +114,41 @@ button{
     border: none;
     color: var(--text);
     margin-top: 20px;
-    border-radius: spx;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: var(--primary);
+    color: var(--text);
+    padding: 10px;
+    border: var(--primary);
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#slider{
+
+    background: none; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    background-image: var(--botimg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    width: 50px; /* Define el ancho del botón */
+    height: 50px; 
+    justify-content: space-between;
+
+}
+.switch{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    color:var(--textinverted);
+    
+
+
 }

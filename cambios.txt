@@ -1,0 +1,53 @@
+Para enviar cambios a un repositorio Git, debes seguir estos pasos:
+
+Asegúrate de Estar en la Rama Correcta:
+
+Antes de enviar tus cambios, asegúrate de estar en la rama correcta donde deseas aplicar los cambios. Puedes verificar la rama actual con el comando:
+
+bash
+Copy code
+git branch
+
+Si deseas cambiar a una rama diferente, puedes usar el comando git checkout. Por ejemplo:
+
+bash
+Copy code
+git checkout nombre_de_la_rama
+
+
+Confirma tus Cambios Locales:
+
+Antes de enviar los cambios, debes confirmar los cambios locales utilizando el comando git commit. Primero, agrega los cambios al área de preparación utilizando git add. Por ejemplo:
+
+bash
+Copy code
+git add .
+
+Esto agregará todos los cambios nuevos y modificados al área de preparación. Si deseas confirmar cambios específicos, puedes reemplazar . con los nombres de los archivos que deseas confirmar.
+
+Luego, realiza la confirmación con un mensaje descriptivo:
+
+bash
+Copy code
+git commit -m "Mensaje del commit"
+Reemplaza "Mensaje del commit" con un mensaje que explique los cambios que estás confirmado. Este mensaje debe ser descriptivo para que otros puedan entender los cambios que has realizado.
+
+Envía los Cambios al Repositorio Remoto:
+
+Para enviar tus cambios al repositorio remoto, utiliza el comando git push. Por ejemplo, para enviar cambios a la rama principal (por lo general, se llama "main" o "master"):
+
+bash
+Copy code
+git push origin main
+
+Esto enviará tus cambios al repositorio remoto llamado "origin" en la rama principal. Asegúrate de reemplazar "main" con el nombre de la rama en la que deseas enviar los cambios y "origin" con el nombre remoto correcto si no es "origin".
+
+Inicia Sesión y Autenticación (si es necesario):
+
+Si estás trabajando en un repositorio remoto que requiere autenticación, Git te solicitará tus credenciales de inicio de sesión, como tu nombre de usuario y contraseña, o te pedirá que uses un token de acceso personal si es necesario.
+
+Espera a que el Proceso de Empuje se Complete:
+
+Git enviará tus cambios al repositorio remoto, y deberías ver un mensaje que indica que el proceso de empuje se ha completado correctamente. Una vez que esto suceda, tus cambios estarán disponibles para otros colaboradores en el repositorio remoto.
+
+¡Eso es todo! Has enviado tus cambios al repositorio remoto y los has compartido con otros colaboradores. Recuerda que es una buena práctica mantener tu repositorio local actualizado antes de enviar cambios utilizando git pull. Esto asegura que tengas los cambios más recientes antes de enviar los tuyos.

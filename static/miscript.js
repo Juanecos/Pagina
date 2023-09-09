@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
       
     const preferedColorScheme = window.matchMedia('prefers-color-scheme:dark').matches ? 'dark' : 'light';
-    const slider = document.getElementById('slider');
+    const slider = document.getElementById('slider'||'switch');
 
     const setTheme = (theme) => {
         document.documentElement.setAttribute('data-theme', theme);
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     }
-    slider.addEventListener('change', ()=>{
+    slider.addEventListener('click', ()=>{
         let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
         setTheme(switchToTheme);
 
