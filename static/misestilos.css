@@ -1,29 +1,48 @@
 /* styles.css */
 
 [data-theme="light"]{
+
+     
     --primary:#5ac2cf;
+    --border: #5ac2cf;
+    --borderstyle: ridge;
     --background: #b3c6caea;
     --text:#3a3135;
     --textinverted:#2e682e;
-    --boundingbox: #aff1de;
+    --boundingbox: #99b3ee;
     --botimg:url('luna.png');
+    
+
+    
 }
 
-[data-theme="dark"]{
+[data-theme="dark" ]{
+    
+    
     --primary:#fc843e;
-    --background: #19191f;
+    --border:#ffd5bc;
+    --borderstyle: ridge;
+    --background: #212225;
     --text:#e9dada;
     --textinverted:#3b07079d;
-    --boundingbox: #b48166;
+    --boundingbox: #161616;
     --botimg:url('sol.png');
+    
+    
 }
 
+body:not(.no-transition) {
+    body:not(.no-transition) {
+        transition: 0;
+      }
+  }
 
 body{
     color: var(--text);
     background: var(--background);
     margin: 60px;
-
+    transition: .5s ease all;
+    
 
 
 }
@@ -31,22 +50,20 @@ body{
 main {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    padding-inline: 100px;
+    padding-inline: 100px; 
     padding-block-start: 40px;
-    
-
-
-    
 }
 header {
     font-family: Arial, Helvetica, sans-serif;
-    
-    border-radius: 5px;
     background-color: var(--primary);
     margin-inline: 50px;
-    text-align: flex;
-  
+    border-radius: 5px;
+    
+    border-bottom-style:var(--borderstyle);
+    border-color: var(--border);
+    border-width: 2px;
 
+    text-align: flex;
 
 }
 nav {
@@ -60,10 +77,6 @@ nav ul {
     float:left;
     width: 80%;
     display: flex;
-
-    
-    
-    
 }
 nav u2 {
     list-style-type: none;
@@ -73,16 +86,11 @@ nav u2 {
     justify-content: space-between;
     align-items: center;
 
-    
-
 }
-nav li{
-
-    
+nav li{ 
     margin-right: 20px;
     display: flex;
     justify-content: space-between;
-
 
 }
 
@@ -95,8 +103,6 @@ nav a {
     font-weight: bold;
     display: flex;
 
-    
-
 }
 
 
@@ -104,7 +110,6 @@ nav a:hover {
     text-decoration: line;
     color:var(--text)!important;
     cursor: pointer;
-    
     
 }
 
@@ -136,8 +141,8 @@ button:hover{
     background-size: cover;
     background-position: center;
     display: flex;
-    width: 50px; /* Define el ancho del botón */
-    height: 50px; 
+    width: 45px; /* Define el ancho del botón */
+    height: 45px; 
     justify-content: space-between;
 
 }
@@ -148,7 +153,25 @@ button:hover{
     display: inline-block;
     font-weight: bold;
     color:var(--textinverted);
+}
+
+
+.col-2{
     
+    width:50%;
+    padding-block: 20px;
+    padding: 40px;
+    margin:30px;
+    text-align: justify;
+    background-color: var(--boundingbox);
+    border-radius: 10px;
+
+
+
+}
+.row-2{
+
+    display: flex;
 
 
 }
