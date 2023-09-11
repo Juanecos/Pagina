@@ -7,13 +7,18 @@
     <title>{% block titulo %} {% endblock %} </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Old+Permic&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'misestilos.css' %}"></link>
     <script src="{% static 'miscript.js'%}" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 
   </head>
   <body>
 
-    <header>
+    <header id="position">
       <nav>
         <ul>
           <li><a  href="{% url 'inicio' %}">Inicio</a></li>
@@ -35,6 +40,8 @@
           </li>
         </u2>
       </nav>
+
+      
     </header>
     <main>
       <div class="container">
@@ -43,6 +50,7 @@
     </main>
     <footer>
     </footer>
+    <!-- JavaScript Libraries -->
     
   </body>
 </html>

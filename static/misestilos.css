@@ -9,6 +9,7 @@
     --text:#3a3135;
     --textinverted:#2e682e;
     --boundingbox: #99b3ee;
+    --bselected: #8e95ffea;
     --botimg:url('luna.png');
 
 }
@@ -22,8 +23,13 @@
     --text:#e9dada;
     --textinverted:#3b07079d;
     --boundingbox: #161616;
+    --bselected:#3c3f47;
     --botimg:url('sol.png');
 
+}
+*{
+    font-family: 'Noto Sans Old Permic', sans-serif;
+    overflow: hidden;
 }
 
 body:not(.no-transition) {
@@ -40,20 +46,19 @@ body{
 }
 
 main {
-    font-family: Arial, Helvetica, sans-serif;
+
     font-size: 20px;
     padding-inline: 100px; 
     padding-block-start: 40px;
 }
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
+
     background-color: var(--primary);
     margin-inline: 50px;
     border-radius: 5px;
-    border-bottom-style:var(--borderstyle);
-    border-color: var(--border);
-    border-width: 2px;
+    /* border-bottom-style:var(--borderstyle); */
+    box-shadow: 2px 2px 1px var(--border);
     text-align: flex;
 }
 
@@ -89,6 +94,7 @@ nav a {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
+    width: 100%;
     display: flex;
 }
 
@@ -149,7 +155,39 @@ button:hover{
     background-color: var(--boundingbox);
     border-radius: 10px;
 }
-
+.col-2:hover{
+    transition: all .5s ease;
+    background-color: var(--bselected);
+    box-shadow: 3px 3px 3px var(--bselected) ;
+}
+.col-2 button:hover{
+    color: var(--textinverted);
+    font-weight: bold;
+    background-color: var(--background);
+}
 .row-2{
     display: flex;
 }
+
+#position{
+
+    position: sticky;
+    top: 30px;
+    
+}
+.hora{
+    width: 300px;
+    height: 300px;
+}
+iframe {
+    border: none;
+    height: 70px;
+    width: 520px;
+    background: #004884 0% 0% no-repeat padding-box;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    opacity: 1;
+    
+}
+

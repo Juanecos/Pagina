@@ -15,3 +15,6 @@ def reviews(request):
 
 def view(request):
     return render(request, 'paginas/view.html')
+
+def hora(request):
+    return render(request, 'paginas/hora.html')
