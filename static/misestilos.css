@@ -3,11 +3,11 @@
 [data-theme="light"]{
 
     --primary:#80d4f4;
-    --border: #5ac2cf;
+    --border: #478892;
     --borderstyle: ridge;
     --background: #b3c6caea;
     --text:#3a3135;
-    --textinverted:#2e682e;
+    --textinverted:#359b35;
     --boundingbox: #99b3ee;
     --bselected: #8e95ffea;
     --botimg:url('luna.png');
@@ -18,8 +18,8 @@
 
 [data-theme="dark" ]{
     
-    --primary:#fc843e;
-    --border:#080808;
+    --primary:#ff6435;
+    --border:#494947;
     --borderstyle: ridge;
     --background: #212225;
     --text:#e9dada;
@@ -27,6 +27,9 @@
     --boundingbox: #161616;
     --bselected:#3c3f47;
     --botimg:url('sol.png');
+    --degfilter: hue-rotate(160deg)
+        contrast(0.9)
+        brightness(2);
 
 }
 *{
@@ -59,10 +62,9 @@ main {
     padding-bottom: 5rem;
     margin-inline-end: -100px;
     position: relative; */
-    padding-inline: 100px; 
-    padding-block-start: 40px;
-    padding-top: 100px;
-    margin-bottom: 10rem;
+    padding-inline: 10rem; 
+    margin-block-start: 4rem;
+    margin-block-end: 10rem;
 
 
 
@@ -73,8 +75,8 @@ header {
     background-color: var(--primary);
     margin:0;
     padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
 
     /* border-bottom-style:var(--borderstyle); */
     box-shadow: 2px 2px 1px var(--border);
@@ -114,7 +116,7 @@ nav li{
 }
 
 nav a {
-    color: var(--textinverted);
+    color: var(--text);
     text-decoration: none;
     text-align: center;
     font-weight: bold;
@@ -124,7 +126,7 @@ nav a {
 
 nav a:hover {
     text-decoration: line;
-    color:var(--text)!important;
+    color:var(--textinverted);
     cursor: pointer;
 }
 
@@ -134,7 +136,7 @@ button{
     border: none;
     border-radius: 5px;
     color: var(--text);
-    align-content: end;
+
 
 }
 
@@ -168,7 +170,7 @@ button:hover{
     text-align: center;
     display: inline-block;
     font-weight: bold;
-    color:var(--textinverted);
+    color:var(--text);
 }
 
 .col-2{
@@ -191,13 +193,15 @@ button:hover{
 
 .row-2{
     text-align: center;
-    position: relative;
     display: flex;
+    height: 100%;
+
+    
 }
 
 
 .container-max{
-    padding-inline: 8rem;
+    padding-inline: 2rem;
     justify-content: space-between;
 }
 
@@ -208,7 +212,7 @@ footer{
     bottom: 0;
     width: 100%;
     height: fit-content;
-    background-color:#ff8758;
+    background-color:var(--primary);
     margin-top: auto;
     
 
@@ -224,12 +228,11 @@ iframe{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    filter:var(--degfilter);
+        
     
-    filter: hue-rotate(160deg)
-        brightness(2);
-        opacity: 0.7;
 
-    transition: .5s ease all;
+    transition: .01s ease all;
 
         
     
