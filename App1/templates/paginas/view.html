@@ -9,12 +9,14 @@
             <div class="col-2">
                 <h2>Tiempo real</h2>
                 <p>Consulta aqui los valores de temperatura en tiempo real para cada uno de tus dispositivos</p>
-                <button>Ir a tiempo real</button>
+                <a href="{% url 'temperatura' %}">
+                    <button>Ir a tiempo real</button>
+                </a>
             </div>
             <div class="col-2">
                 <h2>Historial</h2>
                 <p>Mira el historial completo de temperatura a lo largo del ultimo año</p>
-                <button>Ir a historial</button> 
+                <button >Ir a historial</button> 
             </div>
         </div>
         {% comment %} <div  class="row-2">

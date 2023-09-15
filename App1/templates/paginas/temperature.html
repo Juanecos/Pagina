@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block titulo%}  Visualizacion {% endblock %}
+
+{% block contenido %}
+    <table class="time-real">
+        <tr> 
+            <td>ID</td>
+            <td> Temperatura</td>
+        </tr>
+    {% for dato in datos %}
+        <tr>
+            <td>{{ dato.id}}</td> 
+            <td>{{ dato.temperatura}}</td>
+        </tr>
+    
+    {% endfor %}
+    </table>
+{% endblock %}
+

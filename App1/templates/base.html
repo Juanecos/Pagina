@@ -18,7 +18,7 @@
   </head>
   <body>
 
-    <header id="position">
+    <header id="start">
       <nav>
         <ul>
           <li><a  href="{% url 'inicio' %}">Inicio</a></li>
@@ -27,17 +27,17 @@
           <li><a  href="{% url 'visualizacion' %}">Visualizacion</a></li>
         </ul>
         <u2>
-          <label class="switch">
-            <li>
+          <label  id="slider">
+            {% comment %} <li>
               Temas  ➤➤
-            </li>
+            </li> {% endcomment %}
           </label>
-          <li>
+          {% comment %} <li>
             <a>
-              <input type="button" id="slider"></input>
+              <input type="button" ></input>
               <span class="slider"></span>
             </a>
-          </li>
+          </li> {% endcomment %}
         </u2>
       </nav>
 
@@ -46,10 +46,19 @@
     <main>
       
       {% block contenido%} {% endblock %}       
-       
+       <a id="end"></a>
     </main>
     <footer>
-     <iframe id="elframe" src="https://horalegalnueva.inm.gov.co/inm/" style="overflow: hidden;"></iframe>
+     
+     <u1>
+      <iframe id="elframe" src="https://horalegalnueva.inm.gov.co/inm/" style="overflow: hidden;"></iframe>
+     </u1>
+     <u2>
+      
+      <a href="#start">Ir al principio</a>
+      <a href="#end">Ir al final</a>
+      
+    </u2>
     </footer>
     <!-- JavaScript Libraries -->
     
