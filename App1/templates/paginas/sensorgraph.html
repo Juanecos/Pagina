@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo%}  Inicio{% endblock %}
+
+{% block contenido %}
+
+    {% for dato in datos %}
+
+        <h2> sensor {{ dato.id }}  </h2>
+
+
+    {% endfor %}
+    
+
+
+{% endblock %}

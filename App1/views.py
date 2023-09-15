@@ -1,8 +1,9 @@
 
 '''definir vistas'''
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import MiModelo
-# from django.http import HttpResponse
+from django.template import loader
 # Create your views here.
 
 def home(request):
@@ -29,3 +30,12 @@ def temperatura(request):
 
     return render(request, 'paginas/temperature.html', {'datos':datos})
 
+def sensor(request,id):
+    '''acceder a un sensor en especifico'''
+
+    p= MiModelo.objects.get(id=id)
+
+    print(p)
+    #falta perfeccionarlo
+
+    return render(request, 'paginas/sensorgraph.html', {'datos':datos})

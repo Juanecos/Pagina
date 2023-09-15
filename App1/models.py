@@ -10,7 +10,7 @@ class MiModelo(models.Model):
     temperatura = models.FloatField(max_length=10, null=False, unique=True, verbose_name='temperatures')
 
     def __str__(self): 
-        fila= "Id: " + str(self.id) + "-" + "Temperatura: " + str(self.temperatura)
+        fila= "id: " + str(self.id) + "-" + " Temperatura: " + str(self.temperatura)
         return fila
 
     class Meta:

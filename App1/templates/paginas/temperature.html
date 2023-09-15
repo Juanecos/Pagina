@@ -6,13 +6,15 @@
 {% block contenido %}
     <table class="time-real">
         <tr> 
-            <td>ID</td>
-            <td> Temperatura</td>
+            <td> ID </td>
+            <td> Temperatura </td>
+            <td> Acceso </td>
         </tr>
     {% for dato in datos %}
         <tr>
-            <td>{{ dato.id}}</td> 
-            <td>{{ dato.temperatura}}</td>
+            <td>{{ dato.id }}</td> 
+            <td>{{ dato.temperatura }}</td>
+            <td><button><span href=""> Sensor {{ dato.id }} </span>  </button></td>
         </tr>
     
     {% endfor %}

@@ -148,9 +148,7 @@ button {
     border-radius: 5px;
     color: var(--text);
     
-    position: absolute;
-    bottom:3rem;
-    margin-right: 0;
+
     
 
     
@@ -220,7 +218,7 @@ button:hover {
     text-align: justify;
     background-color: var(--boundingbox);
     border-radius: 10px;
-    padding-bottom: 3rem;
+
     
     
     
@@ -240,8 +238,7 @@ button:hover {
     
     display: flex;
     height: 100%;
-    
-    position: relative;
+
 
  
     
