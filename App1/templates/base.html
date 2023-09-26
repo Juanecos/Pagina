@@ -20,18 +20,24 @@
 
     <header id="start">
       <nav>
+        <u2>
+          <iframe src="https://horalegalnueva.inm.gov.co/inm/" scrolling="no"></iframe>
+        </u2>
         <ul>
-          <li><a  href="{% url 'inicio' %}">Inicio</a></li>
-          <li><a  href="{% url 'acerca-de' %}">Acerca de</a></li>
-          <li><a  href="{% url 'observaciones' %}">Observaciones</a></li>
-          <li><a  href="{% url 'visualizacion' %}">Visualizacion</a></li>
+          <li><a class="resaltar" href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a class="resaltar" href="{% url 'acerca-de' %}">Acerca de</a></li>
+          <li><a class="resaltar" href="{% url 'observaciones' %}">Observaciones</a></li>
+          <li><a class="resaltar"href="{% url 'visualizacion' %}">Visualizacion</a></li>
+          <li><a>
+            <div>
+              <input type="checkbox" id= "slider"> 
+
+              <label for="slider" class="label-slider"></label>
+            </div>
+          </a>          
+          </li>
         </ul>
         <u2>
-          <label  id="slider">
-            {% comment %} <li>
-              Temas  ➤➤
-            </li> {% endcomment %}
-          </label>
           {% comment %} <li>
             <a>
               <input type="button" ></input>
@@ -50,15 +56,6 @@
     </main>
     <footer>
      
-     <u1>
-      <iframe id="elframe" src="https://horalegalnueva.inm.gov.co/inm/" style="overflow: hidden;"></iframe>
-     </u1>
-     <u2>
-      
-      <a href="#start">Ir al principio</a>
-      <a href="#end">Ir al final</a>
-      
-    </u2>
     </footer>
     <!-- JavaScript Libraries -->
     
