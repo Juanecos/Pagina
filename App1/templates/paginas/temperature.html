@@ -13,7 +13,7 @@
     {% for dato in datos %}
         <tr>
             <td>{{ dato.id }}</td> 
-            <td>{{ dato.temperatura }}</td>
+            <td id="sensores"> vacio </td>  {% comment %} dato exportado de temperatura, ponerlo en tiempo real  {{ dato.temperatura }} {% endcomment %}
             <td><button><span href=""> Sensor {{ dato.id }} </span>  </button></td>
         </tr>
     

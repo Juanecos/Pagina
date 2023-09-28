@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Old+Permic&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'misestilos.css' %}"></link>
     <script src="{% static 'miscript.js'%}" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
     
 
   </head>
@@ -58,6 +58,8 @@
      
     </footer>
     <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    {% comment %}libreria de paho mqtt {% endcomment %}
     
   </body>
 </html>

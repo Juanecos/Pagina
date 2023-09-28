@@ -4,7 +4,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import MiModelo
 from django.template import loader
-# Create your views here.
+
+# import pyrebase
+# # Create your views here.
+
+# # test-c3d8b proyecto
+# config = {
+#   'apiKey': "AIzaSyDbBnEESS4GhltvSzEwp-CaKJMhWgaFkZE",
+#   'authDomain': "test-c3d8b.firebaseapp.com",
+#   'projectId': "test-c3d8b",
+#   'storageBucket': "test-c3d8b.appspot.com",
+#   'messagingSenderId': "86425367004",
+#   'appId': "1:86425367004:web:22edc939bea12ee383df19"
+# };
+
+# # Initialize Firebase
+# firebase=pyrebase.initialize_app(config);
 
 def home(request):
     '''acceder a la pagina de inicio'''
@@ -30,12 +45,11 @@ def temperatura(request):
 
     return render(request, 'paginas/temperature.html', {'datos':datos})
 
-def sensor(request,id):
+def sensores(request,id):
     '''acceder a un sensor en especifico'''
 
     p= MiModelo.objects.get(id=id)
-
-    print(p)
+    print(f"hola {p}")
     #falta perfeccionarlo
-
     return render(request, 'paginas/sensorgraph.html', {'datos':datos})
+
