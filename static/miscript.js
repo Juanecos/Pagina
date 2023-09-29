@@ -81,20 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // while(!client.onMessageArrived){
-  //   const time= 15000;
-  //   setTimeout(function () {
-  //     j = "Desconectado"; 
-  //     console.log("Variable no encontrada");
-  //     const datoid = document.getElementById('sensores');
-  //     datoid.textContent = j;
-  //   }, time);
-  // }
-
-
-
-
-
   let temporizador = null;
 
   function onMessageArrived(message) {
