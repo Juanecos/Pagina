@@ -145,14 +145,17 @@ button:hover {
     height: 30px;
     width: 55px;
 
+    
 
-    background-image: url('/static/slider_fondo.png');
-    background-size: cover;
     background-color: #5eb6ff;
-    opacity: 0.8;
+    opacity: 1;
+    
     border-radius: 100px;
     box-shadow: inset 3px 3px 10px rgb(54, 15, 80);
 
+    background-image: url('/static/slider_fondo.png');
+    background-size: cover;
+    opacity:1;
 
     position: relative;
     cursor: pointer;
@@ -170,7 +173,7 @@ button:hover {
 
     background: #a9beda;
     box-shadow: inset 5px 5px 10px rgb(255, 255, 255);
-    
+
     border-style: solid;
     border-color: #91beb3fa;
     border-width: .2px;
@@ -186,8 +189,8 @@ button:hover {
 }
 
 #slider:checked~.label-slider {
-    background-color: #ead4ff;
-    
+    background-color: #9148d6;
+
 
 }
 
@@ -249,7 +252,7 @@ button:hover {
 
 .row-2 {
     width: 85%;
-    
+
     float: left;
 
 

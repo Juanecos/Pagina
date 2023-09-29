@@ -1,44 +1,44 @@
 document.addEventListener('DOMContentLoaded', function () {
-      
-    const preferedColorScheme = window.matchMedia('prefers-color-scheme:dark').matches ? 'dark' : 'light';
-    const slider = document.getElementById('slider');
+
+  const preferedColorScheme = window.matchMedia('prefers-color-scheme:dark').matches ? 'dark' : 'light';
+  const slider = document.getElementById('slider');
 
 
-    const setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
 
-        if (theme === 'dark') {
-            slider.checked = true; // Marcar el input si el tema es "dark"
-          } else {
-            slider.checked = false; // Desmarcar el input si el tema no es "dark" o no se encuentra en localStorage
-          }
-
+    if (theme === 'dark') {
+      slider.checked = true; // Marcar el input si el tema es "dark"
+    } else {
+      slider.checked = false; // Desmarcar el input si el tema no es "dark" o no se encuentra en localStorage
     }
 
-
-    slider.addEventListener('change', ()=>{
-
-
-        let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-        setTheme(switchToTheme);
-        
-    
-
-    
-
-    })
-
-    setTheme(localStorage.getItem('theme') || preferedColorScheme);
+  }
 
 
-    
-    
+  slider.addEventListener('change', () => {
+
+
+    let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+    setTheme(switchToTheme);
+
+
+
+
+
+  })
+
+  setTheme(localStorage.getItem('theme') || preferedColorScheme);
+
+
+
+
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-//   // Tu código JavaScript aquí
+document.addEventListener('DOMContentLoaded', function () {
+  //   // Tu código JavaScript aquí
 
 
 
@@ -61,68 +61,72 @@ document.addEventListener('DOMContentLoaded', function() {
   client.onMessageArrived = onMessageArrived;
 
   client.connect({
-    userName : "juan-camilo",
-    password : "iNM123456789",
+    userName: "juan-camilo",
+    password: "iNM123456789",
     onSuccess: onConnect
-    
+
 
   });
 
   function onConnect() {
-  // Once a connection has been made, make a subscription and send a message.
-  console.log("Connected with Server");
-  client.subscribe("temperatura1");
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("Connected with Server");
+    client.subscribe("temperatura1");
 
   }
 
   function onConnectionLost(responseObject) {
-  if (responseObject.errorCode !== 0) {
+    if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:" + responseObject.errorMessage);
-  }
-  }
-
-
-  function onMessageArrived(message) { 
-  // console.log("onMessageArrived:" + j);
-  let j = JSON.parse(message.payloadString);
-  handleMessage(j);
-
-
-  
+    }
   }
 
+  // while(!client.onMessageArrived){
+  //   const time= 15000;
+  //   setTimeout(function () {
+  //     j = "Desconectado"; 
+  //     console.log("Variable no encontrada");
+  //     const datoid = document.getElementById('sensores');
+  //     datoid.textContent = j;
+  //   }, time);
+  // }
 
 
 
-  // console.log("Topic:     " + message.destinationName);
-  // console.log("QoS:       " + message.qos);
-  // console.log("Retained:  " + message.retained);
-  // // Read Only, set if message might be a duplicate sent from broker
-  // console.log("Duplicate: " + message.duplicate);
 
 
+  let temporizador = null;
 
-function handleMessage(message) {
-  if (message != null || message != undefined) {
-    
-    let dato1 = message;
-    const datoid = document.getElementById('sensores');
-    datoid.textContent = dato1 + " °C";
-    console.log(dato1);
-    // despues de un cierto intervalo de tiempo si no envia un dato, limpiar lo que se ve en pantalla
+  function onMessageArrived(message) {
 
-    setTimeout(function () {
-      dato1 = "vacio"; 
-      console.log("Variable no encontrada");
-      datoid.textContent = dato1;
-    }, 15000); // Espera 15 segundos
-  
+    clearTimeout(temporizador);
+    let j = (message.payloadString);//JSON.parse
+    handleMessage(j);
 
-
-
+    temporizador = setTimeout(function () { 
+      j = "no encontrado";
+      handleMessage(j);
+    }, 15000);
+    console.log(j);
   }
-}
 
+  function handleMessage(message) {
+    if (message != null || message != undefined) {
+
+      let dato1 = message;
+      console.log(dato1);
+      const datoid = document.getElementById('sensores');
+      if (dato1 == "no encontrado"){
+        datoid.textContent = dato1;
+      }  
+      else{
+        datoid.textContent = dato1 + " °C";
+      }
+      
+      // despues de un cierto intervalo de tiempo si no envia un dato, limpiar lo que se ve en pantalla
+      // Espera 15 segundos
+    }
+  }
 });
 
 
