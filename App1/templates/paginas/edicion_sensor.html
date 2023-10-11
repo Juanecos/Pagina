@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo%}  Editar curso{% endblock %}
+
+{% block contenido %}
+
+<div class= "containerform">
+    <div class="divform3">
+        <form action ="{% url 'editarsensorselct' codigo.id%}" method="POST">{% csrf_token %}
+            <h2 class="formrow"> Editar sensor</h2>
+            <h4 class="formrow">ID:</h4>
+            <div class="formrow">
+                <input type="text" id="txtid" name="txtid" value="{{codigo.id}}" class="formtxt1"
+                minlenght="4" maxlenght="4" readonly required>
+
+            </div>
+            <h4 class="formrow">Nombre:</h4>
+            <div class="formrow">
+                <input type="text" id="txtnombresensor" name="txtnombresensor" value="{{codigo.name}}" class="formtxt1"
+                minlenght="4" maxlenght="4" required>
+            </div>
+
+            
+            <div class="formrow">
+                <button class type="submit"> Guardar </button>
+            </div>
+        </form>        
+    </div>
+</div>
+
+
+{% endblock %}

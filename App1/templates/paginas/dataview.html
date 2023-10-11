@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+
+{% block titulo%}  Visualizacion {% endblock %}
+
+{% block contenido %}
+<h1> Visualizacion en tiempo real</h1>
+
+<div class= "containerform2">
+    <div class="divform1">
+        
+        <form action ="registrarsensor/" method="POST">{% csrf_token %}
+            <h2 class="formrow"> Agregar sensor</h2>
+            <h4>Nombre:</h4>
+            <div class="formrow">
+                <input type="text" id="txtnombresensor" name="txtnombresensor" class="formtxt1"
+                minlenght="4" maxlenght="4" required>
+            </div>
+            <div class="formrow">
+                <button type="submit"> Guardar </button>
+            </div>
+        </form>        
+    </div>
+    <div class = "divform2">
+        <table class="time-real">
+            <tr class="tablerow">
+                    
+                {% comment %} <td> ID </td> {% endcomment %}
+                <td> Sensor </td>
+                <td> Temperatura </td>
+                <td> Humedad </td>
+                <td>Visualizacion</td>
+                <td colspan="2">Opciones</td>
+            </tr>
+        {% for dato in datos %}    
+            <tr class="tablerow">
+                
+                <td>{{ dato.sensor.name }}</td>
+                <td>{{dato.temperatura}}</td>
+                <td>{{dato.humedad}}</td>
+                <td><button>Acceso</button></td> 
+                <td>
+                    <form method="POST" action="{% url 'editar_sensor' dato.sensor.id %}">{% csrf_token %}
+                        <button type="submit">Editar</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{% url 'eliminar_sensor' dato.sensor.id %}">{% csrf_token %}
+                    <button class="eliminacion" type="submit">Eliminar</button>
+                    </form>
+                </td>   
+            </tr>        
+        {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+
