@@ -23,6 +23,7 @@
 
   setTheme(localStorage.getItem('theme') || preferedColorScheme);
 
+
   const btnEliminacion = document.querySelectorAll(".eliminacion");
 
   btnEliminacion.forEach(btn => {

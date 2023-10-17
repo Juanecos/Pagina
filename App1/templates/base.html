@@ -12,18 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Old+Permic&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'misestilos.css' %}"></link>
     <script src="{% static 'miscript.js'%}" type="text/javascript"></script>
-    {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
-    
 
   </head>
   <body>
 
+    
+
+    
     <header id="start">
-      <nav>
-        <u2>
-          <iframe src="https://horalegalnueva.inm.gov.co/inm/" scrolling="no"></iframe>
-        </u2>
+      
+      <nav >
+{% comment %}         
+        <u2 >
+          <img class="logo" src="/static/LogoINMNegro.png" alt="Mi imagen" height="60">
+        </u2> {% endcomment %}
         <ul>
+          <li class="leftlogo"> <img class="logo" src="/static/LogoINMNegro.png" alt="Mi imagen" height="60"> </li>
           <li><a class="resaltar" href="{% url 'inicio' %}">Inicio</a></li>
           <li><a class="resaltar" href="{% url 'acerca-de' %}">Acerca de</a></li>
           <li><a class="resaltar" href="{% url 'observaciones' %}">Observaciones</a></li>
@@ -37,29 +41,24 @@
           </a>          
           </li>
         </ul>
-        <u2>
-          {% comment %} <li>
-            <a>
-              <input type="button" ></input>
-              <span class="slider"></span>
-            </a>
-          </li> {% endcomment %}
-        </u2>
+
       </nav>
 
       
     </header>
     <main>
       
-      {% block contenido%} {% endblock %}       
+      {% block contenido%} {% endblock %}
+      
+       
+             
        <a id="end"></a>
+
+       
     </main>
     <footer>
      
     </footer>
-    <!-- JavaScript Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
-    {% comment %}libreria de paho mqtt {% endcomment %}
     
   </body>
 </html>
