@@ -31,8 +31,8 @@ class ModeloRealTime(models.Model):
     )
     def __str__(self):
         fila = ("id: " + str(self.id)
-                + "-" + " Sensor: "+ str(self.temperatura)
-                + "-" + " Temperatura: "+ str(self.sensor)
+                + "-" + " Sensor: "+ str(self.sensor)
+                + "-" + " Temperatura: "+ str(self.temperatura)
                 + "-" + " Humedad: " + str(self.humedad))
         return fila
     class Meta:
