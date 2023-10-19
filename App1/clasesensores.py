@@ -11,7 +11,7 @@ import json
 
 
 class Manage_sensor:
-    def __init__(self, broker, port, addnewclient, user, password, topic_list,tablaRealTime):
+    def __init__(self, broker, port, addnewclient, user, password, topic_list):
         
         self.client = paho.Client(
             addnewclient, clean_session=True, userdata=None, protocol=paho.MQTTv311
@@ -34,7 +34,7 @@ class Manage_sensor:
         
         self.client.on_publish = self.on_publish
         self.topic_list = topic_list
-        self.tablarealtime= tablaRealTime
+        # self.tablarealtime= tablaRealTime
 
         self.client.reconnect_delay_set(min_delay=1, max_delay=120)
         self.client.connect(broker, port, keepalive=60)
@@ -130,16 +130,18 @@ class Manage_sensor:
     def mqtt_deploy(self):
         # while True:
         
-        # try:   
-            self.client.loop_start()
+        # try:
+        self.client.loop_start()
             
-            variable_global = self.obtener_variable_global()
-            # Utiliza la variable global como desees
-            if variable_global is not None:
-                variable2=variable_global
-                variable_global= None
-                return(variable2)
+        variable_global = self.obtener_variable_global()
+        # Utiliza la variable global como desees
+        if variable_global is not None:
+            variable2=variable_global
+            variable_global= None
             
+            return(variable2)
+        
+    
         # except KeyboardInterrupt:
         #     print("Disconnecting from MQTT broker and exiting.")
         #     self.client.loop_stop()
@@ -151,47 +153,66 @@ class Manage_sensor:
         #     time.sleep(5)
         #     self.client.reconnect()
 
-broker = "6eef623dbafd42238df342ee595d441a.s1.eu.hivemq.cloud"
-port = 8883
-user = "juan-camilo"
-password = "iNM123456789"
-user2 = "hivemq.webclient.1696257769493"
-password2 = "Q?1z.Y0ibLa47!eCD#Fc"
-Clientid = ""
+def performance(broker,port,Clientid,user,password,topic_list,q):
+    import time
+    nuevocliente = Manage_sensor(broker, port, Clientid, user, password, topic_list)
+
+    for topic in topic_list:
+        nuevocliente.sub(topic, qos=0)
+        time.sleep(1)
+
+    while True:
+        try:
+            mensaje = nuevocliente.mqtt_deploy()
+            if mensaje is not None:
+                # hacer update de la base de datos
+                print(mensaje)
+                time.sleep(0.3)
+                
+                
+                
+
+        except KeyboardInterrupt:
+            print("Disconnecting")
+
+            break
+
+if __name__ =='__main__':
+
+
+            
+    from multiprocessing import Process, Queue
+
+
+    broker = "6eef623dbafd42238df342ee595d441a.s1.eu.hivemq.cloud"
+    port = 8883
+    user = "juan-camilo"
+    password = "iNM123456789"
+    user2 = "hivemq.webclient.1696257769493"
+    password2 = "Q?1z.Y0ibLa47!eCD#Fc"
+    Clientid = ""
 
 
 
-topic_list = [
-    "AR002",
-    "temperatura1",
-    "sensor3",
-]  # sacar de la base de datos la topic list
-nuevocliente = Manage_sensor(broker, port, Clientid, user, password, topic_list,0)
+    topic_list = [
+        "AR001",
+        "temperatura1",
+        "sensor3",
+    ]  # sacar de la base de datos la topic list
 
-for topic in topic_list:
-    nuevocliente.sub(topic, qos=0)
+
+    q = Queue()
+    mqtt_process = Process(
+        target=performance,
+        args=(broker,port,Clientid,user,password,topic_list,q)
+    )
+    mqtt_process.start()
+    print(q.get())  # prints "[42, None, 'hello']"
+
+
     time.sleep(1)
 
-
-while True:
-    try:
-        mensaje = nuevocliente.mqtt_deploy()
-        if mensaje is not None:
-            # hacer update de la base de datos
-            print(mensaje)
-            time.sleep(0.15)
-        
-        
-    except KeyboardInterrupt:
-        print("Disconnecting from MQTT broker and exiting.aaaaaaaaaaaaa")
-        nuevocliente.shutdown()
-
-        break
-    except Exception as e:
-        print("An error occurred:", str(e))
-        print("Reconnecting to the MQTT broker in 5 seconds...aaaaaaaaaaaaaaaaa")
-        time.sleep(5)
-        nuevocliente.reconnectcl()
+    
 
 
 
